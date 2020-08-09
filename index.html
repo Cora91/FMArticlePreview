@@ -1,224 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" media="screen" href="style.css">
 
   <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
   
   <title>Frontend Mentor | Article preview component</title>
+
   
-<!--  Will put styles in style sheet later. Still learning how GitHub works.  -->
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      --dkblu: hsl(217,19%,35%);
-      --dkgyblu: hsl(214,17%,51%);
-      --gyblu: hsl(212,23%,69%);
-      --ltgyblu: hsl(210,46%,95%);
-    }
-    
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    
-    .background-box {
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      background-color: var(--ltgyblu);
-      justify-content: center;
-      align-self: center;
-    }
-    .card {
-      margin: 10%;
-      max-width: 80%;
-      background-color: white;
-      border: none;
-      border-radius: 10px;
-
-    }
-    .pic-container {
-      display: inline-flex;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      border-radius: 10px 10px 0 0;
-    }
-    .main-pic {
-      width: 100%;
-      height: 100%;
-    }
-    .info {
-      display: inline-block;
-      justify-content: center;
-      padding: 8% 8% 0 8%;
-      font-size: 13px;
-      color: var(--dkblu);
-      font-family: 'Manrope', sans-serif;
-    }
-    .author {
-      max-width: 80%;
-      float: left;
-    }
-    .author-pic {
-      border-radius: 100%;
-      max-width: 20%;
-      height: auto;
-      float: left;
-      align-content: center;
-      margin: 5% 10% 0 0;
-    }
-    .author p span {
-      color: var(--gyblu);
-    }
-    #share {
-      max-width: 20%;
-      float: right;
-      margin: 8% 10% 0  0;
-      position: relative;
-      z-index: 2;
-      display: inline-block;
-      cursor: pointer;
-    }
-    #shareIcon {
-      font-size: 150%;
-      border-radius: 100%;
-      padding: 30%;
-    }
-    .unclicked {
-      background-color: var(--ltgyblu);
-      color: var(--dkgyblu);
-    }
-    .clicked {
-      background-color: var(--dkgyblu);
-      color: var(--ltgyblu);
-    }
-    #myPopup {
-      visibility: hidden;
-      padding: 3%;
-      background-color: var(--dkblu);
-      color: #fff; 
-      position: absolute;
-      z-index: 1;
-      top: 75%;
-      left: 10%;
-      right: 10%;
-      bottom: 16.5%;
-      border-radius: 0 0 10px 10px;
-    }
-    #myPopup.show {
-      visibility: visible;
-    }
-    #popup-text {
-      position: relative;
-      bottom: 20%;
-      margin: 10px;
-      color: var(--gyblu);
-      font-size: 80%;
-    }
-    #myPopup img {
-      position: relative;
-      bottom: -5%;
-      padding: 2%;
-      border-radius: 25%;
-    }
-    #myPopup img:hover {
-      background-color: var(--gyblu);
-    }
-    /*TARGET VIEWPORTS ARE 375PX AND 1440 PX
-    MAIN CSS IS FOR TARGET SIZE 375 PX*/
-
-    @media only screen and (min-width: 420px) {
-      #myPopup {
-        top: 80%;
-        bottom: 11.5%;
-      }
-      #share {
-        margin: 7% 10% 0  0;
-      }
-    }
-    @media only screen and (min-width: 475px) {
-      #myPopup {
-        top: 85%;
-        bottom: 5%;
-      }
-      #share {
-        margin: 5% 10% 0  0;
-      }
-      
-    @media only screen and (min-width: 600px) {
-      .background-box {
-        max-width: 80%;
-        max-height: 80%;
-      }
-
-      .pic-container {
-        height: 100%;
-        max-width: 40%;
-        display: inline-flex;
-        float:left;
-        justify-content: start;
-        border-radius: 10px 0 0 10px;
-      }
-      .info {
-        float: right;
-        max-width: 53%;
-        height: 90%;
-        padding: 3% 3% 0 0;
-      }
-      .author {
-        position: relative;
-        margin-top: 5%;
-      }
-       #myPopup {
-        min-width: 100px;
-        max-width: 200px;
-        height: 5%;
-        padding: 1%;
-        border-radius: 15px;
-        left: 67%;
-        top: 33%;
-        bottom: 0;
-        right: 0;    
-      }
-      #myPopup::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: var(--dkblu) transparent transparent transparent;
-      }
-      #popup-text {
-        position: relative;
-        bottom: 5%;
-        margin: 0 5%;
-        color: var(--gyblu);
-        font-size: 80%;
-      }
-      #myPopup img {
-        position: relative;
-        top: 15%;
-        padding: 2%;
-        border-radius: 25%;
-      }
-    }
-    @media only screen and (min-width: 1400px) {
-       #myPopup {
-        left: 68.5%;
-        top: 33%;
-      }
-    }
-  </style>
 </head>
+  
 <body>
   <div class="background-box">
     <div class="card">
