@@ -1,6 +1,8 @@
 # FMArticlePreview
 Frontend Mentor Article Preview Component Newbie Challenge
 
+This is my first time using GitHub! I hope I do everything right. I'm mostly just trying to get use to the platform and figure out how stuff works. I'm also going to put this project on Vercel as suggested below. And Vercel is something else I have never used before, so please bear with me if I do something that isn't quite right. A big thank you in advance to anyone who helps me figure this out or fixes some of my code!
+
 FRONTEND MENTOR README FILE
 
 ## Building your project
